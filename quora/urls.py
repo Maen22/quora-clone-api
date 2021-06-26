@@ -41,16 +41,17 @@ urlpatterns = [
     path('api/',
          include('users.api.urls')),
 
-     path('api/',
+    path('api/',
          include('questions.api.urls')),
 
     path('api-auth/',
          include('rest_framework.urls')),
 
+    # rest login/registration endpionts
     path('api/rest-auth/',
          include('rest_auth.urls')),
 
-    path('api/api-auth/registration/',
+    path('api/rest-auth/registration/',
          include('rest_auth.registration.urls')),
 
     re_path(r'^.*$', IndexTemplateView.as_view(), name='entry-point')
